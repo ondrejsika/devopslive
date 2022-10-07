@@ -26,7 +26,7 @@ write_files:
   permissions: "0600"
   owner: root:root
   content: |
-    tls-san: 
+    tls-san:
       - k8s-api.sikademo.com
       - ma0.sikademo.com
       - ma1.sikademo.com
@@ -76,7 +76,7 @@ write_files:
   owner: root:root
   content: |
     server: https://${module.ma0.droplet.ipv4_address}:9345
-    tls-san: 
+    tls-san:
       - k8s-api.sikademo.com
       - ma0.sikademo.com
       - ma1.sikademo.com
