@@ -27,7 +27,7 @@ chpasswd:
 runcmd:
   - |
     apt update
-    apt install curl sudo git
+    apt install curl sudo git open-iscsi nfs-common
     curl -fsSL https://ins.oxs.cz/slu-linux-amd64.sh | sudo sh
 EOF
 }

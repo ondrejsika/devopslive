@@ -39,7 +39,7 @@ write_files:
 runcmd:
   - |
     apt update
-    apt install -y curl sudo git
+    apt install -y curl sudo git open-iscsi nfs-common
     curl -fsSL https://ins.oxs.cz/slu-linux-amd64.sh | sudo sh
     curl -sfL https://get.rke2.io | INSTALL_RKE2_METHOD='tar' sh -
     systemctl enable rke2-server.service
@@ -89,7 +89,7 @@ write_files:
 runcmd:
   - |
     apt update
-    apt install -y curl sudo git
+    apt install -y curl sudo git open-iscsi nfs-common
     curl -fsSL https://ins.oxs.cz/slu-linux-amd64.sh | sudo sh
     curl -sfL https://get.rke2.io | INSTALL_RKE2_METHOD='tar' sh -
     systemctl enable rke2-server.service
@@ -131,7 +131,7 @@ write_files:
 runcmd:
   - |
     apt update
-    apt install -y curl sudo git
+    apt install -y curl sudo git open-iscsi nfs-common
     curl -fsSL https://ins.oxs.cz/slu-linux-amd64.sh | sudo sh
     curl -sfL https://get.rke2.io | INSTALL_RKE2_TYPE="agent" INSTALL_RKE2_METHOD='tar' sh -
     systemctl enable rke2-agent.service
