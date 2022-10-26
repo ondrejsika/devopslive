@@ -61,7 +61,7 @@ kubectl apply -f loggen.yml -f loggen-fast.yml -f loggen-slow.yml
 ```
 
 ```
-kubectl port-forward -n loki svc/loki 3100:3100
+kubectl port-forward -n loki svc/loki-read 3100:3100
 ```
 
 ```
