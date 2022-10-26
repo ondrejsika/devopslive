@@ -38,7 +38,7 @@ kubectl apply -f loggen.yml -f loggen-fast.yml -f loggen-slow.yml
 ```
 
 ```
-{app="loggen"}"
+{app="loggen"}
 ```
 
 ```
