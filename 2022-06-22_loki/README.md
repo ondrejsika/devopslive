@@ -58,7 +58,7 @@ kubectl apply -f loggen.yml -f loggen-fast.yml -f loggen-slow.yml
 ```
 
 ```
-{app=~"loggen.*"} | pattern `<_> <_> <_> <level> <msg>` | line_format "{{ .app }} -- {{.level}} -- {{.msg}}"
+{app=~"loggen.*"} | pattern `<_> <_> <_> <level> <msg> (i=<i>)` | line_format "{{ .i }} -- {{ .app }} -- {{.level}} -- {{.msg}}"
 ```
 
 ```
@@ -70,5 +70,5 @@ export LOKI_ADDR=http://127.0.0.1:3100
 ```
 
 ```
-logcli query '{app="loggen-slow"} | pattern `<_> <_> <_> <level> <msg>` | line_format "{{ .app }} -- {{.level}} -- {{.msg}}"'
+logcli query '{app="loggen-slow"} | pattern `<_> <_> <_> <level> <msg> (i=<i>)` | line_format "{{ .i }} -- {{ .app }} -- {{.level}} -- {{.msg}}"'
 ```
