@@ -17,7 +17,7 @@ provider "keycloak" {
 resource "keycloak_realm" "example" {
   realm                    = "example"
   enabled                  = true
-  display_name_html        = "<h1>Example Realm</h1>"
+  display_name_html        = "<h1>SikaDemo SSO</h1>"
   login_with_email_allowed = true
 }
 
