@@ -57,3 +57,15 @@ resource "keycloak_user" "bar" {
     temporary = true
   }
 }
+
+resource "keycloak_user" "baz" {
+  realm_id       = keycloak_realm.example.id
+  username       = "baz"
+  enabled        = true
+  email          = "baz@example.com"
+  email_verified = true
+  initial_password {
+    value     = "asdf"
+    temporary = true
+  }
+}
