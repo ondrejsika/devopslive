@@ -6,7 +6,7 @@ config:
     provider = "oidc"
     provider_display_name = "Keycloak"
     oidc_issuer_url = "https://sso.k8s.sikademo.com/realms/example"
-    email_domains = [ "*" ]
+    email_domains = [ "sikademo.com", "ondrejsika.com" ]
     scope = "openid profile email"
     cookie_domains = ".k8s.sikademo.com"
     whitelist_domains = ".k8s.sikademo.com"
