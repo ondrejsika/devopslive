@@ -53,6 +53,7 @@ resource "keycloak_user" "bar" {
   email          = "bar@sikademo.com"
   email_verified = true
   initial_password {
-    value = "asdf"
+    value     = "asdf"
+    temporary = true
   }
 }
