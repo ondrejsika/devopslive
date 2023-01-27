@@ -21,6 +21,20 @@ resource "keycloak_realm" "example" {
   login_with_email_allowed = true
 }
 
+resource "keycloak_openid_client" "oauth2-proxy" {
+  realm_id              = keycloak_realm.example.id
+  client_id             = "oauth2-proxy"
+  enabled               = true
+  access_type           = "CONFIDENTIAL"
+  standard_flow_enabled = true
+  valid_redirect_uris = [
+    "https://oauth.k8s.sikademo.com/oauth2/callback"
+  ]
+  login_theme   = "keycloak"
+  web_origins   = ["+"]
+  client_secret = "jlfa14HlYOmqeAdXZyfMSWl50Fd96pkf"
+}
+
 resource "keycloak_user" "foo" {
   realm_id       = keycloak_realm.example.id
   username       = "foo"
@@ -42,19 +56,3 @@ resource "keycloak_user" "bar" {
     value = "asdf"
   }
 }
-
-resource "keycloak_openid_client" "oauth2-proxy" {
-  realm_id              = keycloak_realm.example.id
-  client_id             = "oauth2-proxy"
-  enabled               = true
-  access_type           = "CONFIDENTIAL"
-  standard_flow_enabled = true
-  valid_redirect_uris = [
-    "https://oauth.k8s.sikademo.com/oauth2/callback"
-  ]
-  root_url      = "$${authBaseUrl}"
-  admin_url     = "$${authBaseUrl}"
-  web_origins   = ["+"]
-  client_secret = "jlfa14HlYOmqeAdXZyfMSWl50Fd96pkf"
-}
-
