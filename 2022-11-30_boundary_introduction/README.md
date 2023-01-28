@@ -4,6 +4,7 @@ Install boundary on Mac
 
 ```
 brew install hashicorp/tap/boundary
+brew install hashicorp-boundary-desktop
 ```
 
 Run Boundary dev server
