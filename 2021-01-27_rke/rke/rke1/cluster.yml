@@ -1,0 +1,41 @@
+nodes:
+  - address: rke1no0.sikademo.com
+    role:
+      - controlplane
+      - etcd
+    hostname_override: rke1no0
+    user: root
+  - address: rke1no1.sikademo.com
+    role:
+      - controlplane
+      - etcd
+    hostname_override: rke1no1
+    user: root
+  - address: rke1no2.sikademo.com
+    port: "22"
+    role:
+      - controlplane
+      - etcd
+    hostname_override: rke1no2
+    user: root
+  - address: rke1no3.sikademo.com
+    role:
+      - worker
+    hostname_override: rke1no3
+    user: root
+  - address: rke1no4.sikademo.com
+    role:
+      - worker
+    hostname_override: rke1no4
+    user: root
+  - address: rke1no5.sikademo.com
+    port: "22"
+    role:
+      - worker
+    hostname_override: rke1no5
+    user: root
+ssh_agent_auth: true
+kubernetes_version: ""
+ingress:
+  provider: none
+cluster_name: "rke2"

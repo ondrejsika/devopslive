@@ -1,0 +1,28 @@
+nodes:
+  - address: rke0no0.sikademo.com
+    role:
+      - controlplane
+      - worker
+      - etcd
+    hostname_override: rke0no0
+    user: root
+  - address: rke0no1.sikademo.com
+    role:
+      - controlplane
+      - worker
+      - etcd
+    hostname_override: rke0no1
+    user: root
+  - address: rke0no2.sikademo.com
+    port: "22"
+    role:
+      - controlplane
+      - worker
+      - etcd
+    hostname_override: rke0no2
+    user: root
+ssh_agent_auth: true
+kubernetes_version: "v1.18.14-rancher1-1"
+ingress:
+  provider: none
+cluster_name: "rke1"
