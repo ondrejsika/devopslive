@@ -1,0 +1,34 @@
+image: sikalabs/ci
+
+stages:
+  - infracost
+
+infracost:
+  stage: infracost
+  script:
+    - make breakdown-json
+    - make breakdown-table
+    - make breakdown-html
+    - make get-master
+    - make diff-json
+    - make diff-table
+    - make gitlab-comment-commit
+  artifacts:
+    paths:
+      - "infracost*.out.*"
+
+infracost-merge-request:
+  stage: infracost
+  only:
+    - merge_requests
+  script:
+    - make breakdown-json
+    - make breakdown-table
+    - make breakdown-html
+    - make get-master
+    - make diff-json
+    - make diff-table
+    - make gitlab-comment-merge-request
+  artifacts:
+    paths:
+      - "infracost*.out.*"
