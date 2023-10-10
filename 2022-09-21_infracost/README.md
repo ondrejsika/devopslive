@@ -51,7 +51,7 @@ infracost diff --path infracost.local.out.json \
 
 ```
 infracost diff --path infracost.local.out.json \
-  --compare-to infracost.master.out.json \
+  --compare-to infracost.master.out.json
 ```
 
 `gitlab-comment-commit`
