@@ -8,4 +8,5 @@
 
 ## Resources
 
+- https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers
 - https://containers.dev/implementors/json_reference/
