@@ -1,0 +1,28 @@
+adminPassword: admin
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt
+  hosts:
+    - grafana.k8s.sikademo.com
+  tls:
+    - hosts:
+        - grafana.k8s.sikademo.com
+      secretName: grafana.k8s.sikademo.com-tls
+grafana.ini:
+  server:
+    root_url: https://grafana.k8s.sikademo.com
+  users:
+    viewers_can_edit: true
+  auth.basic:
+    enabled: true
+  auth:
+    disable_login_form: false
+  smtp:
+    enabled: false
+    host: maildev-smtp.maildev.svc.cluster.local:25
+    skip_verify: true
+    from_address: grafana@sikademo.com
+    from_name: Grafana Alerting
+    startTLS_policy: OpportunisticStartTLS
