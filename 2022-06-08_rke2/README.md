@@ -7,7 +7,11 @@ curl -sfL https://get.rke2.io | sh -
 mkdir -p /etc/rancher/rke2/
 cat << EOF > /etc/rancher/rke2/config.yaml
 token: supersecuretoken
-tls-san: k8s-api.sikademo.com
+tls-san:
+    - k8s-api.sikademo.com
+    - ma0.sikademo.com
+    - ma1.sikademo.com
+    - ma2.sikademo.com
 node-taint:
     - "CriticalAddonsOnly=true:NoExecute"
 disable:
