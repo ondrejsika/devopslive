@@ -33,6 +33,14 @@ export PATH="$PATH":/var/lib/rancher/rke2/bin && export KUBECONFIG=/etc/rancher/
 kubectl get nodes
 ```
 
+## Copy kubectl and kubeconfig to proper locations
+
+```
+cp /var/lib/rancher/rke2/bin/kubectl /usr/local/bin/
+mkdir -p /root/.kube/
+cp /etc/rancher/rke2/rke2.yaml /root/.kube/config
+```
+
 ## Other Masters
 
 ```
