@@ -10,6 +10,8 @@ token: supersecuretoken
 tls-san: k8s-api.sikademo.com
 node-taint:
     - "CriticalAddonsOnly=true:NoExecute"
+disable:
+    - rke2-ingress-nginx
 EOF
 systemctl enable rke2-server.service
 systemctl start rke2-server.service
@@ -46,6 +48,8 @@ tls-san:
     - ma2.sikademo.com
 node-taint:
     - "CriticalAddonsOnly=true:NoExecute"
+disable:
+    - rke2-ingress-nginx
 EOF
 systemctl enable rke2-server.service
 systemctl start rke2-server.service

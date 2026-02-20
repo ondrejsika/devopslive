@@ -24,6 +24,13 @@ ssh_pwauth: yes
 password: asdfasdf2020
 chpasswd:
   expire: false
+write_files:
+- path: /etc/rancher/rke2/config.yaml
+  permissions: "0600"
+  owner: root:root
+  content: |
+    disable:
+      - rke2-ingress-nginx
 runcmd:
   - |
     apt update
